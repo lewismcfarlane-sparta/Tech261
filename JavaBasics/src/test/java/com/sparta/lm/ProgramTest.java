@@ -53,6 +53,8 @@ public class ProgramTest {
     }
 
 
+    // Boundary tests
+
     @Test
     @DisplayName("Given a time of 0, then the greeting should be Goodnight! ")
     void checkThat0GivesGoodnight() {
@@ -76,6 +78,33 @@ public class ProgramTest {
     void checkThat12GivesGoodAfternoon() {
         int time = 12;
         String expectedGreeting = "Good afternoon!";
+        String actualGreeting = Program.getGreeting(time);
+        Assertions.assertEquals(expectedGreeting, actualGreeting);
+    }
+
+    @Test
+    @DisplayName("Given a time of 18, then the greeting should be Good evening!")
+    void checkThat18GivesGoodEvening() {
+        int time = 18;
+        String expectedGreeting = "Good evening!";
+        String actualGreeting = Program.getGreeting(time);
+        Assertions.assertEquals(expectedGreeting, actualGreeting);
+    }
+
+    @Test
+    @DisplayName("Given a time of 22, then the greeting should be Goodnight!")
+    void checkThat22GivesGoodnight() {
+        int time = 22;
+        String expectedGreeting = "Goodnight!";
+        String actualGreeting = Program.getGreeting(time);
+        Assertions.assertEquals(expectedGreeting, actualGreeting);
+    }
+
+    @Test
+    @DisplayName("Given a time of 24, then the greeting should be Goodnight!")
+    void checkThat24GivesGoodnight() {
+        int time = 24;
+        String expectedGreeting = "Goodnight!";
         String actualGreeting = Program.getGreeting(time);
         Assertions.assertEquals(expectedGreeting, actualGreeting);
     }
