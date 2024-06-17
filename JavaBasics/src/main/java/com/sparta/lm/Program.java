@@ -2,8 +2,12 @@ package com.sparta.lm;
 
 public class Program {
     public static void main(String[] args) { // Entry point (methods)
-        int timeOfDay = 21; // type, name, value.
+        int timeOfDay = getCurrentHour(); // type, name, value.
         System.out.println(getGreeting(timeOfDay));
+    }
+
+    public static int getCurrentHour() {
+        return java.time.LocalTime.now().getHour();
     }
 
     public static String getGreeting(int timeOfDay) {
