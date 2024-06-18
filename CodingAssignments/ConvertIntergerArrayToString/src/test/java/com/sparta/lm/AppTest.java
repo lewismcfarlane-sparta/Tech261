@@ -18,7 +18,7 @@ public class AppTest {
     void checkMultipleIntegerConversion() {
         int expected = 1234;
         int[] array = {1, 2, 3, 4};
-        int actual = App.covertArrayToInteger(array);
+        int actual = App.convertArrayToInteger(array);
 
         Assertions.assertEquals(expected, actual);
     }
@@ -26,6 +26,9 @@ public class AppTest {
     @Test
     @DisplayName("Given a single integer in an array, return it as a single integer")
     void checkSingleIntegerConversion() {
-
+        int expected = 1;
+        int[] array = {1};
+        int actual = App.convertArrayToInteger(array);
+        Assertions.assertEquals(expected, actual);
     }
 }
