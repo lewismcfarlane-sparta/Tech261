@@ -28,6 +28,7 @@ public class App {
         input = input.replace("]", "");
         input = input.replace(" ", "");
         input = input.replace(",", "");
+        input = input.replace("-", "");
         return input;
     }
 }
