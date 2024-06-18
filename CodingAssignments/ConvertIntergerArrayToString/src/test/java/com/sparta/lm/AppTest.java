@@ -3,6 +3,9 @@ package com.sparta.lm;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 //Given an array of integers, convert them to a single int made up of the digits
 //
@@ -23,12 +26,13 @@ public class AppTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test
+    @ParameterizedTest
+    @CsvSource({"0, 0",
+                "1, 1",
+                "33, 33"})
     @DisplayName("Given a single integer in an array, return it as a single integer")
-    void checkSingleIntegerConversion() {
-        int expected = 1;
-        int[] array = {1};
-        int actual = App.convertArrayToInteger(array);
+    void checkSingleIntegerConversion(int input, int expected) {
+        int actual = App.convertArrayToInteger(new int[]{input});
         Assertions.assertEquals(expected, actual);
     }
 }
