@@ -34,5 +34,16 @@ public class AppTest {
     void checkSingleIntegerConversion(int input, int expected) {
         int actual = App.convertArrayToInteger(new int[]{input});
         Assertions.assertEquals(expected, actual);
+        System.out.println(actual);
+    }
+
+    @Test
+    @DisplayName("Given that the array of integers has leading zeros, the returned integer should have no leading zeros")
+    void checkIfLeadingZerosAreRemoved() {
+        int expected = 1001;
+        int[] array = {0, 0, 10, 0, 1};
+        int actual = App.convertArrayToInteger(array);
+        Assertions.assertEquals(expected, actual);
+        System.out.println(actual);
     }
 }
