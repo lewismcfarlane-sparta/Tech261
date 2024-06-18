@@ -14,11 +14,11 @@ public class FizzBuzzTest {
     // If divisible by 3 and 5, print "FizzBuzz"
 
     @Test
-    @DisplayName("Given an input of one, FizzBuzz returns one")
+    @DisplayName("Given an input of 0, FizzBuzz returns one")
     void checkInputOfOneFizzBuzzReturnsOne() {
         // Arrange
-        int input = 1;
-        String expected = "1";
+        int input = 0;
+        String expected = "0";
         // Act
         String actual = FizzBuzz.getFizzBuzzFrom(input);
         // Assert
