@@ -1,43 +1,19 @@
 package com.sparta.lm;
 
-public class Dog {
-    private String name;
-    private String breed;
-    private int age;
-
+public class Dog extends Animal {
     public Dog(String name, String breed, int age) {
-        this.name = name;
-        this.breed = breed;
-        this.age = age;
+        super(name, breed, age);
     }
 
-    public String getBreed() {
-        return breed;
-    }
 
-    public void setBreed(String breed) {
-        this.breed = breed;
-    }
+    // 3 ways to overload a method
+    // name has to be the same
+    // overload based on:
+    // 1. Return type
+    // 2. Type of parameters
+    // 3. Order of parameters
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public static void main(String[] args) {
-        //int age = 5, type, name, value. Same for constructor
-        Dog max = new Dog("Max", "Terrier", 2);
-        System.out.println(max.getBreed());
+    public void play(String name) {
+        System.out.println(name + " wants to play with " + super.getName());
     }
 }
