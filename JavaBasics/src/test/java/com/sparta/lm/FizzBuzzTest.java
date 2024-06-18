@@ -13,17 +13,6 @@ public class FizzBuzzTest {
     // If divisible by 5, print "Buzz"
     // If divisible by 3 and 5, print "FizzBuzz"
 
-    @Test
-    @DisplayName("Given an input of 0, FizzBuzz returns one")
-    void checkInputOfOneFizzBuzzReturnsOne() {
-        // Arrange
-        int input = 0;
-        String expected = "0";
-        // Act
-        String actual = FizzBuzz.getFizzBuzzFrom(input);
-        // Assert
-        Assertions.assertEquals(expected, actual);
-    }
 
     @ParameterizedTest
     @ValueSource(ints = {3, 6, 9, 12})
@@ -60,10 +49,11 @@ public class FizzBuzzTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test
-    @DisplayName("Test 15 for FizzBuzz")
-    void givenInput15ReturnFizzBuzz() {
-        int input = 15;
+    @ParameterizedTest
+    @ValueSource(ints = {0, 15})
+    @DisplayName("Test 0 and 15 for FizzBuzz")
+    void givenInput15ReturnFizzBuzz(int input) {
+
         String expected = "FizzBuzz";
 
         String actual = FizzBuzz.getFizzBuzzFrom(input);

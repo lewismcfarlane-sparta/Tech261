@@ -10,9 +10,6 @@ public class FizzBuzz {
         } else if (number % 5 == 0) {
             fizzBuzzString = "Buzz";
         }
-        if (number == 0) {
-            fizzBuzzString = "0";
-        }
         return fizzBuzzString;
     }
 
