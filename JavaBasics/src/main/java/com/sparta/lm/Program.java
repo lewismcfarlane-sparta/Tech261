@@ -18,7 +18,7 @@ public class Program {
             greeting = "Good afternoon!";
         } else if (timeOfDay >= 18 && timeOfDay < 22) {
             greeting = "Good evening!";
-        } else if ((timeOfDay >= 22 && timeOfDay <= 24) || (timeOfDay >= 0 && timeOfDay < 5 )) {
+        } else if ((timeOfDay >= 22 && timeOfDay < 24) || (timeOfDay >= 0 && timeOfDay < 5 )) {
             greeting = "Goodnight!";
         } else {
             greeting = "Invalid time of day!";

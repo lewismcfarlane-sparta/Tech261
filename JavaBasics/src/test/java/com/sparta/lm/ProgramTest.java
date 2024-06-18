@@ -99,13 +99,4 @@ public class ProgramTest {
         String actualGreeting = Program.getGreeting(time);
         Assertions.assertEquals(expectedGreeting, actualGreeting);
     }
-
-    @Test
-    @DisplayName("Given a time of 24, then the greeting should be Goodnight!")
-    void checkThat24GivesGoodnight() {
-        int time = 24;
-        String expectedGreeting = "Goodnight!";
-        String actualGreeting = Program.getGreeting(time);
-        Assertions.assertEquals(expectedGreeting, actualGreeting);
-    }
 }
