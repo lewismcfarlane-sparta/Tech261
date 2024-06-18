@@ -53,7 +53,14 @@ public class AppTest {
         int[] array = {};
         int actual = App.convertArrayToInteger(array);
         Assertions.assertEquals(expected, actual);
-        System.out.println("Expected: " + expected);
-        System.out.println("Actual: " + actual);
+    }
+
+    @Test
+    @DisplayName("Given negative integers within the int array, check if the returned integer is positive")
+    void checkIfReturnedIntegerIsPositive() {
+        int expected = 1234;
+        int[] array = {-1, -2, 3, -4};
+        int actual = App.convertArrayToInteger(array);
+        Assertions.assertEquals(expected, actual);
     }
 }
