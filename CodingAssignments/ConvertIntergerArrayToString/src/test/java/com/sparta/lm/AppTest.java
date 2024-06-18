@@ -19,8 +19,8 @@ public class AppTest {
     @Test
     @DisplayName("Given multiple integers in an array, return the combined integers as a single integer")
     void checkMultipleIntegerConversion() {
-        int expected = 1234;
-        int[] array = {1, 2, 3, 4};
+        int expected = 12534;
+        int[] array = {1, 25, 3, 4};
         int actual = App.convertArrayToInteger(array);
 
         Assertions.assertEquals(expected, actual);
