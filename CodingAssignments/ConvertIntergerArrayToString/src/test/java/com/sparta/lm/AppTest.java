@@ -34,7 +34,7 @@ public class AppTest {
     void checkSingleIntegerConversion(int input, int expected) {
         int actual = App.convertArrayToInteger(new int[]{input});
         Assertions.assertEquals(expected, actual);
-        System.out.println(actual);
+
     }
 
     @Test
@@ -44,6 +44,17 @@ public class AppTest {
         int[] array = {0, 0, 10, 0, 1};
         int actual = App.convertArrayToInteger(array);
         Assertions.assertEquals(expected, actual);
-        System.out.println(actual);
+
+    }
+
+    @Test
+    @DisplayName("Given the array is empty, check if method returns zero")
+    void checkIfEmptyArrayReturnsZero() {
+        int expected = 0;
+        int[] array = {};
+        int actual = App.convertArrayToInteger(array);
+        Assertions.assertEquals(expected, actual);
+        System.out.println("Expected: " + expected);
+        System.out.println("Actual: " + actual);
     }
 }
