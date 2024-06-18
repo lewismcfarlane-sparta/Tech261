@@ -15,7 +15,6 @@ public class App {
         }
     }
 
-
     @SuppressWarnings("ReassignedVariable")
     public static int convertArrayToStringToInteger(int[] numbers) {
         String stringOfNumbers = Arrays.toString(numbers);
@@ -31,7 +30,4 @@ public class App {
         input = input.replace(",", "");
         return input;
     }
-
-
-
 }
