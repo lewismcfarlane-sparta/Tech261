@@ -1,16 +1,15 @@
 package com.sparta.lm;
 
 public class App {
-
-    public static void main(String[] args) {
-        int[] numbers = {0, 4, 5, 6, -3, -3, -3};
-        checkIfAdjacentIndicesAreIdentical(numbers);
-    }
-
-    public static boolean checkIfAdjacentIndicesAreIdentical(int[] numbers) {
-        if (numbers == null) {
+    public static boolean hasThreeIdenticalNeighbouringIndices(int[] numbers) {
+        if (numbers == null || numbers.length < 3) {
             return false;
         }
-
+        for (int i = 1; i < numbers.length-1; i++) {
+            if (numbers[i-1] == numbers[i] && numbers[i] == numbers[i+1]) {
+                return true;
+            }
+        }
+        return false;
     }
 }
