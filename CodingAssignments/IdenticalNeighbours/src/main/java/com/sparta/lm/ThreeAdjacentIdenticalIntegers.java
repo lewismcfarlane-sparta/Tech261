@@ -1,6 +1,6 @@
 package com.sparta.lm;
 
-public class App {
+public class ThreeAdjacentIdenticalIntegers {
     public static boolean hasThreeIdenticalNeighbouringIndices(int[] numbers) {
         if (numbers == null) {
             return false;

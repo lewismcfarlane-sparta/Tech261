@@ -4,14 +4,14 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class AppTest {
+public class ThreeAdjacentIdenticalIntegersTest {
     @Test
     @DisplayName("Check if returns false when array is null")
     void checkIfInputArrayIsNull() {
         int[] input = null;
         boolean expected = false;
 
-        boolean actual = App.hasThreeIdenticalNeighbouringIndices(input);
+        boolean actual = ThreeAdjacentIdenticalIntegers.hasThreeIdenticalNeighbouringIndices(input);
 
         Assertions.assertEquals(expected, actual);
     }
@@ -21,7 +21,7 @@ public class AppTest {
     void checkIfInputArrayReturnsFalseWithNoThreeAdjacentIdenticalIndices() {
         int[] input = {0, 1, 2, 4, 3, 4, 5};
         boolean expected = false;
-        boolean actual = App.hasThreeIdenticalNeighbouringIndices(input);
+        boolean actual = ThreeAdjacentIdenticalIntegers.hasThreeIdenticalNeighbouringIndices(input);
         Assertions.assertEquals(expected, actual);
     }
 
@@ -30,7 +30,7 @@ public class AppTest {
     void checkIfInputArrayFindsThreeAdjacentIdenticalNumbersInTheMiddle() {
         int[] input = {0, 1, 1, 4, 4, 4, 5};
         boolean expected = true;
-        boolean actual = App.hasThreeIdenticalNeighbouringIndices(input);
+        boolean actual = ThreeAdjacentIdenticalIntegers.hasThreeIdenticalNeighbouringIndices(input);
         Assertions.assertEquals(expected, actual);
     }
 
@@ -39,7 +39,7 @@ public class AppTest {
     void checkIfInputArrayFindsThreeAdjacentIdenticalNumbersAtTheStart() {
         int[] input = {1, 1, 1, 0, 4, 4, 5};
         boolean expected = true;
-        boolean actual = App.hasThreeIdenticalNeighbouringIndices(input);
+        boolean actual = ThreeAdjacentIdenticalIntegers.hasThreeIdenticalNeighbouringIndices(input);
         Assertions.assertEquals(expected, actual);
     }
 
@@ -48,7 +48,7 @@ public class AppTest {
     void checkIfInputArrayFindsThreeAdjacentIdenticalNumbersAtTheEnd() {
         int[] input = {0, 1, 1, 3, 4, 4, 4};
         boolean expected = true;
-        boolean actual = App.hasThreeIdenticalNeighbouringIndices(input);
+        boolean actual = ThreeAdjacentIdenticalIntegers.hasThreeIdenticalNeighbouringIndices(input);
         Assertions.assertEquals(expected, actual);
     }
 
@@ -57,7 +57,7 @@ public class AppTest {
     void returnFalseIfArrayLengthIsTwo() {
         int[] input = {1, 1};
         boolean expected = false;
-        boolean actual = App.hasThreeIdenticalNeighbouringIndices(input);
+        boolean actual = ThreeAdjacentIdenticalIntegers.hasThreeIdenticalNeighbouringIndices(input);
         Assertions.assertEquals(expected, actual);
     }
 
@@ -66,7 +66,7 @@ public class AppTest {
     void returnFalseIfArrayLengthIsOne() {
         int[] input = {1, 1};
         boolean expected = false;
-        boolean actual = App.hasThreeIdenticalNeighbouringIndices(input);
+        boolean actual = ThreeAdjacentIdenticalIntegers.hasThreeIdenticalNeighbouringIndices(input);
         Assertions.assertEquals(expected, actual);
     }
 
@@ -75,7 +75,7 @@ public class AppTest {
     void checkIfReturnsFalseForEmptyArrays() {
         int[] input = {};
         boolean expected = false;
-        boolean actual = App.hasThreeIdenticalNeighbouringIndices(input);
+        boolean actual = ThreeAdjacentIdenticalIntegers.hasThreeIdenticalNeighbouringIndices(input);
         Assertions.assertEquals(expected, actual);
     }
 
