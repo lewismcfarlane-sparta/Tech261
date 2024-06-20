@@ -1,24 +1,63 @@
 package com.sparta.lm;
 
+import java.util.*;
+
 public class PalindromeCheck {
 
     public static void main(String[] args) {
-        System.out.println(isPalindrome("raCecar"));
-        System.out.println(isPalindrome("racecar"));
-        System.out.println(isPalindrome("ll"));
-        System.out.println(isPalindrome("race1234car"));
+        String input = "da31413d!! 433! mu 34m m!u^^^m mam aaa bbb ccc dddd eeee";
+        String longestPalindromes = getLongestPalindromesFromInput(input);
+        System.out.println(longestPalindromes);
+    }
+
+    public static String getLongestPalindromesFromInput(String input) {
+        String palindromeList = getPalindromeList(input);
+        return getLongestPalindromes(palindromeList);
     }
 
     public static boolean isPalindrome(String word) {
         if (word == null || word.length() < 3) {
             return false;
         }
-
         String lowerCaseWord = word.toLowerCase();
-
         String reversedLowerCaseWord = new StringBuilder(lowerCaseWord).reverse().toString();
-
         return lowerCaseWord.equals(reversedLowerCaseWord);
+    }
+
+    public static String getPalindromeList(String input) {
+        String stringWithOnlyAlphabetical = removeSpecialCharacters(input);
+        String[] listOfWords = stringWithOnlyAlphabetical.split("\\s+");
+        StringBuilder wordsThatArePalindrome = new StringBuilder();
+        for (String word : listOfWords) {
+            if (isPalindrome(word)) {
+                wordsThatArePalindrome.append(word).append(" ");
+            }
+        }
+        return wordsThatArePalindrome.toString().trim();
+    }
+
+    public static String getLongestPalindromes(String input) {
+        String[] listOfPalindromes = input.split("\\s+");
+        String longestPalindrome = "";
+        Set<String> palindromeSet = new LinkedHashSet<>();
+
+        for (String word : listOfPalindromes) {
+            if (word.length() > longestPalindrome.length()) {
+                longestPalindrome = word;
+                palindromeSet.clear();
+                palindromeSet.add(word);
+
+            } else if (word.length() == longestPalindrome.length()) {
+                palindromeSet.add(word);
+
+            }
+        }
+        return String.join(" ", palindromeSet);
+    }
+
+
+    public static String removeSpecialCharacters(String input) {
+        return input.replaceAll("[^a-zA-Z\\s]", "");
     }
 }
 
