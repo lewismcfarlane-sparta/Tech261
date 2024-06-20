@@ -5,7 +5,7 @@ import java.util.*;
 public class PalindromeCheck {
 
     public static void main(String[] args) {
-        String input = "da31413d!! 433! mu 34m m!u^^^m mam aaa bbb ccc dddd eeee";
+        String input = "tree Radar muuuum dad rAdaR l/evel! mum r0ot?oR";
         String longestPalindromes = getLongestPalindromesFromInput(input);
         System.out.println(longestPalindromes);
     }
@@ -25,8 +25,8 @@ public class PalindromeCheck {
     }
 
     public static String getPalindromeList(String input) {
-        String stringWithOnlyAlphabetical = removeSpecialCharacters(input);
-        String[] listOfWords = stringWithOnlyAlphabetical.split("\\s+");
+        String lowercaseStringWithOnlyAlphabetical = removeSpecialCharacters(input).toLowerCase();
+        String[] listOfWords = lowercaseStringWithOnlyAlphabetical.split("\\s+");
         StringBuilder wordsThatArePalindrome = new StringBuilder();
         for (String word : listOfWords) {
             if (isPalindrome(word)) {
