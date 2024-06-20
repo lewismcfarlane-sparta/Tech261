@@ -53,9 +53,9 @@ public class AppTest {
     }
 
     @Test
-    @DisplayName("Empty arrays")
+    @DisplayName("Empty arrays returns false")
     void checkIfReturnsFalseForEmptyArrays() {
-        int[] input = {1, 1};
+        int[] input = {};
         boolean expected = false;
         boolean actual = App.hasThreeIdenticalNeighbouringIndices(input);
         Assertions.assertEquals(expected, actual);
