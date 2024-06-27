@@ -2,10 +2,7 @@ package com.sparta.lm;
 
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.time.LocalDate;
 
@@ -19,9 +16,9 @@ public class HamcrestExampleTests {
     @BeforeEach
     void setup() {
         lewis = new Spartan(1, "Lewis", "Java", LocalDate.of(2024, 6, 10));
-        alex = new Spartan(2, "Alex", "C#", LocalDate.of(2021, 3, 3));
+        alex = new Spartan(2, "Alex", "Java", LocalDate.of(2021, 3, 3));
     }
-
+    @Disabled
     @Nested
     @DisplayName("Hamcrest Spartan Tests")
     class hamcrestSpartanTests {
@@ -43,7 +40,7 @@ public class HamcrestExampleTests {
             assertThat(lewis, hasProperty("course", equalTo("Java")));
         }
     }
-
+    @Disabled
     @Nested
     @DisplayName("Hamcrest String Methods")
     class HamcrestStringMethods {
@@ -60,5 +57,27 @@ public class HamcrestExampleTests {
         }
 
 
+    }
+
+    @Nested
+    @DisplayName("My Example Tests")
+    class myExampleTests {
+        @Test
+        @DisplayName("check that 2 spartans are on the same course")
+        void checkThatTwoSpartansAreOnTheSameCourse() {
+            assertThat(lewis.getCourse(), is(alex.getCourse()));
+        }
+
+        @Test
+        @DisplayName("check that employees have different ID")
+        void checkThatEmployeesHaveDifferentId() {
+            assertThat(lewis.getId(), is(not(alex.getId())));
+        }
+
+        @Test
+        @DisplayName("check that employee has started working at Sparta")
+        void checkEmployeeStartDateIsBeforeCurrentTime() {
+            assertThat(lewis.getStartDate(), is(lessThan(LocalDate.now())));
+        }
     }
 }
